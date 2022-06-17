@@ -1,5 +1,6 @@
 // User Interface Logic
 
+// i think this just declares the IDs of divs to be hidden
 function hideResultsAndError() {
   document.getElementById("error-message").style.display = "none";
   document.getElementById("brad").style.display = "none";
@@ -9,17 +10,39 @@ function hideResultsAndError() {
   document.getElementById("etc").style.display = "none";
 }
 
-
+// this hides them
 window.onload = function() {
   hideResultsAndError();
 
+// this i dont know yet
   document.querySelector("form").onsubmit = function(event) {
     hideResultsAndError();
     event.preventDefault();
-    const age = parseInt(document.querySelector("input#age").value);
-    const bod = parseInt(document.querySelector("input#bod").value);
-    const cute = parseInt(document.querySelector("input#cute").value);
 
+// something in here is making the result divs visible
+  const bodType = document.querySelector("input#bod".value);
+  const faceType = document.querySelector("input#cute".value);
+  const ageType = document.querySelector("input#age".value);
 
+    if (faceType = "cute") {
+      if (bodType = "buff" && ageType = "aged") {
+        document.getElementById("brad").style.display = "block";
+
+      } else if (bodType = "buff" && ageType = "fresh") {
+        document.getElementById("baby").style.display = "block";
+
+      } else if (bodType = "not buff" && ageType = "aged") {
+        document.getElementById("dad").style.display = "block";
+
+      } else if (bodType = "not buff" && ageType = "fresh") {
+        document.getElementById("twink").style.display = "block";
+
+      } else {
+        document.getElementById("etc").style.display = "block";
+      }
+    } else {
+      document.getElementById("error-message").style.display = "block";
+    }
   };
+
 };
