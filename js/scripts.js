@@ -26,18 +26,18 @@ window.onload = function() {
   if (faceType === "cute" && bodType === "buff" && ageType === "aged") {
     document.getElementById("brad").style.display = "block";
 
-  } else if (ageType === "fresh") {
+  } else if (faceType === "cute" && bodType === "buff" && ageType === "fresh") {
     document.getElementById("baby").style.display = "block";
 
-  } else if (bodType === "not buff") {
+  } else if (faceType === "cute" && bodType === "not buff" && ageType === "aged") {
     document.getElementById("dad").style.display = "block";
 
-  } else if (bodType === "not buff" && ageType === "fresh") {
+  } else if (faceType === "cute" && bodType === "not buff" && ageType === "fresh") {
     document.getElementById("twink").style.display = "block";
 
   } else if (faceType === "whatevz") {
     document.getElementById("etc").style.display = "block";
-
+// typing in just "whatevz" will still pull up the etc div, even if the others are blank which (in this case) is fine.
   } else {
     document.getElementById("error-message").style.display = "block";
     }
