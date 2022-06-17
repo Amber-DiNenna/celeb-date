@@ -13,6 +13,7 @@ function hideResults() {
 // this hides them
 window.onload = function() {
   hideResults();
+  document.getElementById("form").reset();
 
 // this maybe declares the form and the function event for onsubmit?
   document.querySelector("form").onsubmit = function(event) {
@@ -43,3 +44,8 @@ window.onload = function() {
     }
   };
 };
+
+window.onreset = function() {
+  hideResults();
+}
+// this clears out the divs and fields when hitting the do over (reset) button. clicking the reset button on its own will clear the fields as well.
